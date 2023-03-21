@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 //Esta pagina renderizará cada bebida de manera individual
 
 const Beer = () => {
     const [beer, setBeer] = useState([])
+
+     const navigate = useNavigate()
 
     /** 
     const getBeer = async()=>{
@@ -28,7 +31,7 @@ const Beer = () => {
             <p>{beer.description}</p>
             <p>{beer.brewers_tips} </p>
         </div>
-        <button>Go back</button>
+        <button onClick={() => navigate(-1)}>↩ Go Back</button>
     </div>
 
   )
