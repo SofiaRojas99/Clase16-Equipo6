@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
 //Esta pagina renderizará cada bebida de manera individual
 
@@ -7,19 +7,21 @@ const Beer = () => {
     const [beer, setBeer] = useState([])
 
      const navigate = useNavigate()
+     const {id} = useParams()
+     console.log(id)
 
-    /** 
+    
     const getBeer = async()=>{
         //Deberas completar este fetch con el parametro correspondiente
-        const res = await fetch(`https://api.punkapi.com/v2/beers/${}`)
+        const res = await fetch(`https://api.punkapi.com/v2/beers/${id}`)
         const data = await res.json()
         setBeer(data[0])
     }
 
     useEffect(()=>{
         getBeer()
-    })
-    */
+    },[])
+    
   
   
   return (

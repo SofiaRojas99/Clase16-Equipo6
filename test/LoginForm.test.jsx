@@ -11,7 +11,7 @@ describe("LoginForm testing - renders and events", () => {
     test("First input must be rendered", () => {
         render(<LoginForm/>)
         const text = screen.getByRole('text')
-        fireEvent.change(text, {target: {value: "hola como"}})
+        fireEvent.change(text, {target: {value: "Hola"}})
         expect(text.value).toMatch(/^[ A-Z]+$/i)
     })
     test("Second input must be rendered", () => {
